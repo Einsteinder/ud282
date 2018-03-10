@@ -148,10 +148,55 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
+    public boolean whoWins(char xoy){
+        //Check columns
+        if(grid[0][0] == xoy&& grid[0][1] ==xoy && grid[0][2]==xoy){
+            return true;
+        }
+        if(grid[1][0] == xoy&& grid[1][1] ==xoy && grid[1][2]==xoy){
+            return true;
+        }
+        if(grid[2][0] == xoy&& grid[2][1] ==xoy && grid[2][2]==xoy){
+            return true;
+        }
+
+        //Check rows
+        if(grid[0][0] == xoy&& grid[1][0] ==xoy && grid[2][0]==xoy){
+            return true;
+        }
+        if(grid[0][1] == xoy&& grid[1][1] ==xoy && grid[2][1]==xoy){
+            return true;
+        }
+        if(grid[0][2] == xoy&& grid[1][2] ==xoy && grid[2][2]==xoy){
+            return true;
+        }
+
+        //Check diagonal
+        if(grid[0][0] == xoy&& grid[1][1] ==xoy && grid[2][2]==xoy){
+            return true;
+        }
+        if(grid[0][2] == xoy&& grid[1][1] ==xoy && grid[2][0]==xoy){
+            return true;
+        }
+        return false;
+
+    }
+
     public String checkGameWinner(char [][]grid){
-        String result = "None";
-        //Student code goes here ...
-        return result;
+
+        //Check x
+        if(whoWins('x')){
+            return "x win!";
+        }
+        //Check O
+        else if(whoWins('o')){
+            return "o win!";
+        }
+        else{
+            return "None";
+        }
+
+
     }
 
     /**
