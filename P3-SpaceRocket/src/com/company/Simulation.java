@@ -98,7 +98,7 @@ public class Simulation {
 
             boolean launchStatus = item.launch();
             boolean landStatus = item.land();
-            cost = item.value;
+            cost += item.value;
             while(!launchStatus|!landStatus){
                 launchStatus = item.launch();
                 landStatus = item.land();
